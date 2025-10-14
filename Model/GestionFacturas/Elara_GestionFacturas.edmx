@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Elara_GestionFacturasCM2025Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CancelaProvision">
+          <Key>
+            <PropertyRef Name="IdCancelaProvision" />
+          </Key>
+          <Property Name="IdCancelaProvision" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LineItemId" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="IdSAE" Type="smallint" Nullable="false" />
+          <Property Name="NombreCuenta" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="RazonSocial" Type="varchar" MaxLength="255" />
+          <Property Name="ExpedienteProyecto" Type="varchar" MaxLength="14" Nullable="false" />
+          <Property Name="ReferenciaElara" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="EstatusCoS" Type="varchar" MaxLength="50" />
+          <Property Name="NombreProducto" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="Cantidad" Type="smallint" />
+          <Property Name="ImporteUnitario" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+          <Property Name="ImporteOriginal" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+          <Property Name="DivisaCotizacion" Type="varchar" MaxLength="5" />
+          <Property Name="FormaCobro" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="TipoCambio" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+          <Property Name="ImporteMXN" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+          <Property Name="FechaInicio" Type="datetime" />
+          <Property Name="Mes" Type="smallint" Nullable="false" />
+          <Property Name="Anio" Type="smallint" Nullable="false" />
+          <Property Name="SectorCliente" Type="varchar" MaxLength="100" />
+          <Property Name="TipoIngreso" Type="varchar" MaxLength="200" />
+          <Property Name="KAM" Type="varchar" MaxLength="150" />
+          <Property Name="NoFacSae" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="NombreProyecto" Type="varchar" MaxLength="250" />
+          <Property Name="FechaDeCierre" Type="datetime" />
+          <Property Name="FG" Type="datetime" Nullable="false" />
+          <Property Name="UG" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="FM" Type="datetime" />
+          <Property Name="UM" Type="varchar" MaxLength="50" />
+          <Property Name="FB" Type="datetime" />
+          <Property Name="UB" Type="varchar" MaxLength="50" />
+          <Property Name="ST" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Provision">
+          <Key>
+            <PropertyRef Name="IdProvision" />
+          </Key>
+          <Property Name="IdProvision" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LineItemId" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="IdSAE" Type="smallint" Nullable="false" />
+          <Property Name="NombreCuenta" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="RazonSocial" Type="varchar" MaxLength="255" />
+          <Property Name="ExpedienteProyecto" Type="varchar" MaxLength="14" Nullable="false" />
+          <Property Name="ReferenciaElara" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="EstatusCoS" Type="varchar" MaxLength="50" />
+          <Property Name="NombreProducto" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="Cantidad" Type="smallint" />
+          <Property Name="ImporteUnitario" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+          <Property Name="ImporteOriginal" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+          <Property Name="DivisaCotizacion" Type="varchar" MaxLength="5" />
+          <Property Name="ConsideradoProvision" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="FechaConsideradoProvision" Type="datetime" />
+          <Property Name="FormaCobro" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="TipoCambio" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+          <Property Name="ImporteMXN" Type="decimal" Precision="18" Scale="6" Nullable="false" />
+          <Property Name="FechaInicio" Type="datetime" />
+          <Property Name="Mes" Type="smallint" Nullable="false" />
+          <Property Name="Anio" Type="smallint" Nullable="false" />
+          <Property Name="SectorCliente" Type="varchar" MaxLength="100" />
+          <Property Name="TipoIngreso" Type="varchar" MaxLength="200" />
+          <Property Name="KAM" Type="varchar" MaxLength="150" />
+          <Property Name="NombreProyecto" Type="varchar" MaxLength="250" />
+          <Property Name="FechaDeCierre" Type="datetime" />
+          <Property Name="FG" Type="datetime" Nullable="false" />
+          <Property Name="UG" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="FM" Type="datetime" />
+          <Property Name="UM" Type="varchar" MaxLength="50" />
+          <Property Name="FB" Type="datetime" />
+          <Property Name="UB" Type="varchar" MaxLength="50" />
+          <Property Name="ST" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Elara_GestionFacturasCM2025ModelStoreContainer">
+          <EntitySet Name="CancelaProvision" EntityType="Self.CancelaProvision" Schema="CierreDeMes" store:Type="Tables" />
+          <EntitySet Name="Provision" EntityType="Self.Provision" Schema="CierreDeMes" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Elara_GestionFacturasCM2025Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CancelaProvision">
+          <Key>
+            <PropertyRef Name="IdCancelaProvision" />
+          </Key>
+          <Property Name="IdCancelaProvision" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LineItemId" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IdSAE" Type="Int16" Nullable="false" />
+          <Property Name="NombreCuenta" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RazonSocial" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ExpedienteProyecto" Type="String" MaxLength="14" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ReferenciaElara" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EstatusCoS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NombreProducto" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Cantidad" Type="Int16" />
+          <Property Name="ImporteUnitario" Type="Decimal" Precision="18" Scale="6" Nullable="false" />
+          <Property Name="ImporteOriginal" Type="Decimal" Precision="18" Scale="6" Nullable="false" />
+          <Property Name="DivisaCotizacion" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="FormaCobro" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TipoCambio" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+          <Property Name="ImporteMXN" Type="Decimal" Precision="18" Scale="6" Nullable="false" />
+          <Property Name="FechaInicio" Type="DateTime" Precision="3" />
+          <Property Name="Mes" Type="Int16" Nullable="false" />
+          <Property Name="Anio" Type="Int16" Nullable="false" />
+          <Property Name="SectorCliente" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TipoIngreso" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="KAM" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="NoFacSae" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NombreProyecto" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="FechaDeCierre" Type="DateTime" Precision="3" />
+          <Property Name="FG" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FM" Type="DateTime" Precision="3" />
+          <Property Name="UM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FB" Type="DateTime" Precision="3" />
+          <Property Name="UB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ST" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Provision">
+          <Key>
+            <PropertyRef Name="IdProvision" />
+          </Key>
+          <Property Name="IdProvision" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LineItemId" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IdSAE" Type="Int16" Nullable="false" />
+          <Property Name="NombreCuenta" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RazonSocial" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ExpedienteProyecto" Type="String" MaxLength="14" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ReferenciaElara" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EstatusCoS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NombreProducto" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Cantidad" Type="Int16" />
+          <Property Name="ImporteUnitario" Type="Decimal" Precision="18" Scale="6" Nullable="false" />
+          <Property Name="ImporteOriginal" Type="Decimal" Precision="18" Scale="6" Nullable="false" />
+          <Property Name="DivisaCotizacion" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="ConsideradoProvision" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FechaConsideradoProvision" Type="DateTime" Precision="3" />
+          <Property Name="FormaCobro" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TipoCambio" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+          <Property Name="ImporteMXN" Type="Decimal" Precision="18" Scale="6" Nullable="false" />
+          <Property Name="FechaInicio" Type="DateTime" Precision="3" />
+          <Property Name="Mes" Type="Int16" Nullable="false" />
+          <Property Name="Anio" Type="Int16" Nullable="false" />
+          <Property Name="SectorCliente" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TipoIngreso" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="KAM" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="NombreProyecto" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="FechaDeCierre" Type="DateTime" Precision="3" />
+          <Property Name="FG" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FM" Type="DateTime" Precision="3" />
+          <Property Name="UM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FB" Type="DateTime" Precision="3" />
+          <Property Name="UB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ST" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Elara_GestionFacturasEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CancelaProvision" EntityType="Self.CancelaProvision" />
+          <EntitySet Name="Provision" EntityType="Self.Provision" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Elara_GestionFacturasCM2025ModelStoreContainer" CdmEntityContainer="Elara_GestionFacturasEntities">
+          <EntitySetMapping Name="CancelaProvision">
+            <EntityTypeMapping TypeName="Elara_GestionFacturasCM2025Model.CancelaProvision">
+              <MappingFragment StoreEntitySet="CancelaProvision">
+                <ScalarProperty Name="IdCancelaProvision" ColumnName="IdCancelaProvision" />
+                <ScalarProperty Name="LineItemId" ColumnName="LineItemId" />
+                <ScalarProperty Name="IdSAE" ColumnName="IdSAE" />
+                <ScalarProperty Name="NombreCuenta" ColumnName="NombreCuenta" />
+                <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
+                <ScalarProperty Name="ExpedienteProyecto" ColumnName="ExpedienteProyecto" />
+                <ScalarProperty Name="ReferenciaElara" ColumnName="ReferenciaElara" />
+                <ScalarProperty Name="EstatusCoS" ColumnName="EstatusCoS" />
+                <ScalarProperty Name="NombreProducto" ColumnName="NombreProducto" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="ImporteUnitario" ColumnName="ImporteUnitario" />
+                <ScalarProperty Name="ImporteOriginal" ColumnName="ImporteOriginal" />
+                <ScalarProperty Name="DivisaCotizacion" ColumnName="DivisaCotizacion" />
+                <ScalarProperty Name="FormaCobro" ColumnName="FormaCobro" />
+                <ScalarProperty Name="TipoCambio" ColumnName="TipoCambio" />
+                <ScalarProperty Name="ImporteMXN" ColumnName="ImporteMXN" />
+                <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+                <ScalarProperty Name="Mes" ColumnName="Mes" />
+                <ScalarProperty Name="Anio" ColumnName="Anio" />
+                <ScalarProperty Name="SectorCliente" ColumnName="SectorCliente" />
+                <ScalarProperty Name="TipoIngreso" ColumnName="TipoIngreso" />
+                <ScalarProperty Name="KAM" ColumnName="KAM" />
+                <ScalarProperty Name="NoFacSae" ColumnName="NoFacSae" />
+                <ScalarProperty Name="NombreProyecto" ColumnName="NombreProyecto" />
+                <ScalarProperty Name="FechaDeCierre" ColumnName="FechaDeCierre" />
+                <ScalarProperty Name="FG" ColumnName="FG" />
+                <ScalarProperty Name="UG" ColumnName="UG" />
+                <ScalarProperty Name="FM" ColumnName="FM" />
+                <ScalarProperty Name="UM" ColumnName="UM" />
+                <ScalarProperty Name="FB" ColumnName="FB" />
+                <ScalarProperty Name="UB" ColumnName="UB" />
+                <ScalarProperty Name="ST" ColumnName="ST" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Provision">
+            <EntityTypeMapping TypeName="Elara_GestionFacturasCM2025Model.Provision">
+              <MappingFragment StoreEntitySet="Provision">
+                <ScalarProperty Name="IdProvision" ColumnName="IdProvision" />
+                <ScalarProperty Name="LineItemId" ColumnName="LineItemId" />
+                <ScalarProperty Name="IdSAE" ColumnName="IdSAE" />
+                <ScalarProperty Name="NombreCuenta" ColumnName="NombreCuenta" />
+                <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
+                <ScalarProperty Name="ExpedienteProyecto" ColumnName="ExpedienteProyecto" />
+                <ScalarProperty Name="ReferenciaElara" ColumnName="ReferenciaElara" />
+                <ScalarProperty Name="EstatusCoS" ColumnName="EstatusCoS" />
+                <ScalarProperty Name="NombreProducto" ColumnName="NombreProducto" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="ImporteUnitario" ColumnName="ImporteUnitario" />
+                <ScalarProperty Name="ImporteOriginal" ColumnName="ImporteOriginal" />
+                <ScalarProperty Name="DivisaCotizacion" ColumnName="DivisaCotizacion" />
+                <ScalarProperty Name="ConsideradoProvision" ColumnName="ConsideradoProvision" />
+                <ScalarProperty Name="FechaConsideradoProvision" ColumnName="FechaConsideradoProvision" />
+                <ScalarProperty Name="FormaCobro" ColumnName="FormaCobro" />
+                <ScalarProperty Name="TipoCambio" ColumnName="TipoCambio" />
+                <ScalarProperty Name="ImporteMXN" ColumnName="ImporteMXN" />
+                <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+                <ScalarProperty Name="Mes" ColumnName="Mes" />
+                <ScalarProperty Name="Anio" ColumnName="Anio" />
+                <ScalarProperty Name="SectorCliente" ColumnName="SectorCliente" />
+                <ScalarProperty Name="TipoIngreso" ColumnName="TipoIngreso" />
+                <ScalarProperty Name="KAM" ColumnName="KAM" />
+                <ScalarProperty Name="NombreProyecto" ColumnName="NombreProyecto" />
+                <ScalarProperty Name="FechaDeCierre" ColumnName="FechaDeCierre" />
+                <ScalarProperty Name="FG" ColumnName="FG" />
+                <ScalarProperty Name="UG" ColumnName="UG" />
+                <ScalarProperty Name="FM" ColumnName="FM" />
+                <ScalarProperty Name="UM" ColumnName="UM" />
+                <ScalarProperty Name="FB" ColumnName="FB" />
+                <ScalarProperty Name="UB" ColumnName="UB" />
+                <ScalarProperty Name="ST" ColumnName="ST" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
