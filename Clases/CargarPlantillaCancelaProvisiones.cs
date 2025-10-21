@@ -4,6 +4,7 @@ using ClosedXML.Excel;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -309,6 +310,24 @@ namespace CargaPlantillasCierreDeMes.Clases
 
                             transaccion.Commit();
                         }
+                        catch (DbEntityValidationException ex)
+                        {
+                            transaccion.Rollback();
+                            StringBuilder errorMessage = new StringBuilder();
+                            if (ex.EntityValidationErrors != null)
+                            {
+                                foreach (var validationErrors in ex.EntityValidationErrors)
+                                {
+                                    foreach (var validationError in validationErrors.ValidationErrors)
+                                    {
+                                        errorMessage.AppendLine($"Propiedad: {validationError.PropertyName} Error: {validationError.ErrorMessage}");
+                                    }
+                                }
+                            }
+
+                            throw new Exception( errorMessage.ToString() );
+                        }
+
                         catch (Exception ex)
                         {
                             transaccion.Rollback();
