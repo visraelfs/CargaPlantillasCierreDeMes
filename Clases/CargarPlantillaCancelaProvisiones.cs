@@ -186,7 +186,11 @@ namespace CargaPlantillasCierreDeMes.Clases
 
                 int row = 2;
 
-                foreach (var fila in hoja.RowsUsed())
+                // OPTIMIZACIÓN 1: Obtener el rango de filas usadas una sola vez
+                var filasUsadas = hoja.RowsUsed();
+                int totalFilas = filasUsadas.Count(); // Contamos solo una vez
+
+                foreach (var fila in filasUsadas)
                 {
                     registroExcel = new ExcelCancelaProvisiones();
 
@@ -219,9 +223,9 @@ namespace CargaPlantillasCierreDeMes.Clases
 
                     row++;
 
-                    _reportProgress(Convert.ToInt32((row * 48) / hoja.RowsUsed().Count()));
+                    _reportProgress(Convert.ToInt32((row * 48) / totalFilas));
 
-                    if (row > hoja.RowsUsed().Count())
+                    if (row > totalFilas)
                         break;
                 }
 
