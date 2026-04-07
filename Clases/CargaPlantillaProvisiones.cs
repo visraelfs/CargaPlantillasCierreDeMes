@@ -191,7 +191,10 @@ namespace CargaPlantillasCierreDeMes.Clases
 
                 int row = 2;
 
-                foreach (var fila in hoja.RowsUsed())
+                var filasUsadas = hoja.RowsUsed();
+                int numeroFilas = filasUsadas.Count();
+
+                foreach (var fila in filasUsadas)
                 {
                     registroExcel = new ExcelProvisiones();
 
@@ -225,9 +228,9 @@ namespace CargaPlantillasCierreDeMes.Clases
 
                     row++;
 
-                    _reportProgress(Convert.ToInt32((row * 48) / hoja.RowsUsed().Count()));
+                    _reportProgress(Convert.ToInt32((row * 48) / numeroFilas));
 
-                    if (row > hoja.RowsUsed().Count())
+                    if (row > numeroFilas)
                         break;
                 }
 
